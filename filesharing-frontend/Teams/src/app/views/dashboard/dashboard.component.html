@@ -1,0 +1,32 @@
+<div class="toolbar">
+  <div class="flex-spacer"></div>
+  <button type="button" mat-stroked-button class="mat-elevation-z0">
+  <mat-icon>attachment</mat-icon>
+  </button>
+  <button type="button" mat-stroked-button class="mat-elevation-z0">
+    <mat-icon>cloud_upload</mat-icon>
+  </button>
+</div>
+<div class="d-flex flex-1">
+  <div style="flex: 0 1 20vw; background: gray; padding: 10px; position: relative; overflow: hidden scroll;">
+<app-teams [teams]="teams"></app-teams>
+  </div>
+  <div class="flex-1" style="padding: 10px 0px 0px 10px;">
+    <router-outlet></router-outlet>
+<!--    <app-upload-file>-->
+<!--    </app-upload-file>-->
+  </div>
+</div>
+<div style="position: fixed; bottom: 45px; right: 20px; width: 200px; text-align: right">
+<div class="sub-menu" *ngIf="showMenu">
+  <button (click)="openDialogTeam()"  mat-mini-fab color="warn" matTooltipClass="tooltip" matTooltipPosition="left" [matTooltip]="'Crea Team'"><mat-icon>people</mat-icon></button>
+  <br />
+  <button *ngIf="team" (click)="openDialogBucket()" mat-mini-fab color="warn" matTooltipClass="tooltip" matTooltipPosition="left" [matTooltip]="'Crea Bucket'"><mat-icon>work</mat-icon></button>
+  <br />
+  <button *ngIf="team && bucket" (click)="openDialogFolder()" mat-mini-fab color="warn" matTooltipClass="tooltip" matTooltipPosition="left" [matTooltip]="'Crea Folder'"><mat-icon>folder</mat-icon></button>
+</div>
+<button  mat-mini-fab color="warn" (click)="showMenu=!showMenu">+</button>
+</div>
+
+
+

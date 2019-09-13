@@ -1,0 +1,15 @@
+{{team}}/{{bucket}}
+<div style="position:relative; overflow: hidden auto; width: 100%; height: 100%">
+
+    <app-upload-file [files]="files">
+        <div style="position:absolute; width: 100%; height: 100%">
+            <div  class="files-list d-flex" *ngFor="let file of files;let i= index">
+                <p class="flex-1"> {{ file.name }} </p>
+                <button class="delete-file" (click)="deleteAttachment(i)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+
+        </div>
+    </app-upload-file>
+</div>

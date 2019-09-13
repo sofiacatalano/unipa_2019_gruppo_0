@@ -1,0 +1,31 @@
+button[mat-stroked-button]{
+  background: transparent;
+  color: white;
+  border: none;
+  flex: 0 1 64px;
+}
+
+.toolbar{
+  background: #db3236; height: 48px;
+  display: flex;
+}
+
+:host{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.sub-menu [mat-mini-fab]{
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.tooltip{
+  font-size: 10px;
+  background: red;
+}
+
+.sub-menu{
+  text-align: right;
+}

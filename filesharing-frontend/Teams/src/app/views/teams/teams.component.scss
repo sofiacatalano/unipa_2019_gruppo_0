@@ -1,0 +1,27 @@
+:host{
+  padding: 10px;
+  font-size: 1.3em;
+  color: white;
+  position: absolute;
+  width: 85%;
+  text-align: center;
+}
+
+mat-card-subtitle{
+  text-align: left;
+  cursor: pointer;
+}
+
+mat-action-row{
+  padding: 0;
+}
+
+.accept{
+  color: limegreen;
+  flex: 1;
+}
+
+.reject{
+  color: red;
+  flex: 1;
+}

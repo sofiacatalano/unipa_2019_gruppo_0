@@ -1,0 +1,22 @@
+:host{
+    margin: 10px;
+}
+
+.google-login{
+  background: #db3236;
+  color: white;
+  font-weight: bold;
+  height: 100px;
+  width: 300px;
+  font-size: 1.5em;
+  img {
+    max-height: 5vh;
+    width: auto;
+    height: auto;
+  }
+}
+
+.title{
+  margin: 60px auto;
+  font-size: 1.5em;
+}

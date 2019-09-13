@@ -1,0 +1,24 @@
+<div class="flex-1">
+  <mat-accordion multi="true">
+    <mat-expansion-panel *ngFor="let info of teams" [expanded]="!(info.members | isCurrentMemberActive)" [hideToggle]="!(info.members | isCurrentMemberActive)">
+      <mat-expansion-panel-header>
+        <mat-panel-title [routerLink]="['', info.uuid]">
+          {{info.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <ng-container *ngFor="let bucket of info.buckets" >
+      <mat-card class="mat-elevation-z0" *ngIf="(info.members | isCurrentMemberActive)">
+        <mat-card-subtitle [routerLink]="['', info.uuid, bucket.name]">
+              {{bucket.name}}
+          </mat-card-subtitle>
+      </mat-card>
+      </ng-container>
+      <mat-action-row *ngIf="!(info.members | isCurrentMemberActive)">
+        <button mat-button class="reject" (click)="reject(info.uuid)"><mat-icon>close</mat-icon></button>
+        <button mat-button class="accept" (click)="accept(info.uuid)"><mat-icon>check</mat-icon></button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

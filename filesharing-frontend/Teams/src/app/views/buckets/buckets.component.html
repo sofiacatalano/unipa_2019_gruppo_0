@@ -1,0 +1,6 @@
+{{teamDTO?.name}}
+<mat-card class="mat-elevation-z0" *ngFor="let bucket of buckets">
+  <mat-card-subtitle [routerLink]="['', team, bucket.name]">
+    <span><mat-icon>work</mat-icon>{{bucket.name}}</span>
+  </mat-card-subtitle>
+</mat-card>

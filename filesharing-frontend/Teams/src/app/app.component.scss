@@ -1,0 +1,19 @@
+.app-component{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+  flex: 0 1 auto;
+}
+
+.footer{
+  flex: 0 1 auto;
+}
+
+div.user-info
+{
+  display: flex;
+  align-items: center;
+}

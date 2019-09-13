@@ -1,0 +1,27 @@
+<div style="display: flex;">
+    <p class="breadcrumb" [routerLink]="['/'+team+'/'+bucket]">/{{bucket}}</p><p class="breadcrumb" [routerLink]="['/'+team+'/'+bucket+'/'+getPathForLink(i)]" *ngFor="let path of folderList; let i = index;">/{{path.path}}</p>
+</div>
+<div style="position:relative; overflow: hidden auto; width: 100%; height: 100%">
+
+    <app-upload-file [files]="files" (onUpload)="uploadFileEvent($event)">
+        <div style="position:absolute; width: 100%; height: 100%">
+            <div  class="files-list d-flex" *ngFor="let file of files?.childs; let i= index">
+                <div *ngIf="file.type == 'CONTENT'" class="file-list-item">
+                    <p (click)="download(file)" class="flex-1"><mat-icon>insert_drive_file</mat-icon> {{ file.name }} </p>
+                    <button class="delete-file" (click)="download(file)">
+                        <mat-icon>cloud_download</mat-icon>
+                    </button>
+                    <button class="delete-file" (click)="deleteAttachment(i)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+                <div *ngIf="file.type == 'FOLDER'" class="file-list-item">
+                    <p [routerLink]="[file.uniqueKey]" class="flex-1"><mat-icon>folder</mat-icon> {{ file.name }} </p>
+                    <button class="delete-file" (click)="deleteAttachment(i)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </app-upload-file>
+</div>
