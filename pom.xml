@@ -17,8 +17,6 @@
 		<module>filesharing-frontend</module>
 		<module>filesharing-resource</module>
 		<module>filesharing-resource-filesystem</module>
-		<module>filesharing-push</module>
-		<module>filesharing-push-web-notification</module>
 	</modules>
 	<properties>
 		<java.version>1.8</java.version>
